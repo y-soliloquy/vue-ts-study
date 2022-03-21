@@ -42,7 +42,7 @@ const color = computed(() => {
                 <input class="input" type="number" v-model="inputtingAge">
             </div>
         </div>
-        <button class="register-button" @click="register">register</button>
+        <button class="register-button" @click="register" :disabled="!isValidName || inputtingName.length === 0">register</button>
     </div>
 </template>
 
@@ -57,12 +57,14 @@ const color = computed(() => {
     width: 50%;
     margin-bottom: 12px;
     border-radius: 4px;
+    position: relative;
+    height: auto;
 }
 .input-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 50px;
+    height: auto;
     margin-bottom: 20px;
 }
 
@@ -77,7 +79,7 @@ const color = computed(() => {
 }
 
 .input-validate-message {
-    font-size: 12x;
+    font-size: 15px !important;
     margin-bottom: 8px;
     color: rgb(244, 194, 190);
 }
@@ -91,6 +93,11 @@ input {
 span {
     font-size: 20px;
     font-weight: bold;
+}
+
+.register-button {
+    position: absolute;
+    bottom: 15px;
 }
 
 </style>
