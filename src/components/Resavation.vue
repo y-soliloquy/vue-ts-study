@@ -1,16 +1,18 @@
 <script setup lang="ts">
-import UITitle from './ui/UITitle.vue';</script>
+import UITitle from './ui/UITitle.vue';
+import Card from './Card.vue';
+</script>
 
 <template>
     <div class="container">
         <UITitle>スロット</UITitle>
-        <div class="card">
+        <Card class="menu-card">
             <span>Badges</span>
             <div class="badges">
                 <span>VIP</span>
                 <span>NORMAL</span>
             </div>
-        </div>
+        </Card>
 
         <div class="resavation-card">
             <span>John Wick1</span>
@@ -42,7 +44,7 @@ import UITitle from './ui/UITitle.vue';</script>
     flex-direction: column;
     align-items: center;
 }
-.card {
+.menu-card {
     width: 300px;
     height: 80px;
     background-color: #ccc;
@@ -50,8 +52,6 @@ import UITitle from './ui/UITitle.vue';</script>
     flex-direction: column;
     align-items: center;
     margin-bottom: 24px;
-    border-radius: 8px;
-    box-shadow: 4px 4px 4px rgb(211, 211, 211)
 }
 
 .resavation-card {
