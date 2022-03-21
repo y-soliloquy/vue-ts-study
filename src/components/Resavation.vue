@@ -11,6 +11,14 @@ const isListVisible = ref<boolean>(true);
 const onClickButton = () => {
     isListVisible.value = !isListVisible.value
 }
+
+const getContent = () => {
+    if (isListVisible.value) {
+        return ResavationList;
+    } else {
+        return MosaicResavation;
+    }
+}
 </script>
 
 <template>
@@ -27,12 +35,13 @@ const onClickButton = () => {
                 </Badge>
             </div>
         </Card>
-        <div v-if="!isListVisible">
+        <component :is="getContent()"></component>
+        <!-- <div v-if="!isListVisible">
            <MosaicResavation />
         </div>
         <div v-else>
             <ResavationList />
-        </div>
+        </div> -->
 
 
         <button @click="onClickButton">Change</button>
