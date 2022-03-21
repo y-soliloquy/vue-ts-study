@@ -8,8 +8,11 @@ import ResavationList from './ResavationList.vue';
 
 const isListVisible = ref<boolean>(true);
 
+const isDialogOpen = ref<boolean>(false);
+
 const onClickButton = () => {
-    isListVisible.value = !isListVisible.value
+    // isListVisible.value = !isListVisible.value
+    isDialogOpen.value = !isDialogOpen.value;
 }
 
 const getContent = () => {
@@ -42,14 +45,14 @@ const getContent = () => {
         <div v-else>
             <ResavationList />
         </div> -->
-
-
         <button @click="onClickButton">Change</button>
+        <dialog :open="isDialogOpen" class="dialog">
+            <span>Dialog</span>
+        </dialog>
     </div>
 </template>
 
 <style scoped>
-
 .container {
     display: flex;
     flex-direction: column;
@@ -71,6 +74,18 @@ const getContent = () => {
     justify-content: space-between;
     width: 60%;
     padding: 20px;
+}
+
+.dialog {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 300px;
+    height: 200px;
+    margin: auto;
+    background-color: aliceblue;
 }
 
 </style>
