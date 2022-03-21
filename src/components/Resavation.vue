@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import UITitle from './ui/UITitle.vue';
 import Card from './Card.vue';
+import Badge from './Badge.vue';
 </script>
 
 <template>
@@ -9,29 +10,39 @@ import Card from './Card.vue';
         <Card class="menu-card">
             <span>Badges</span>
             <div class="badges">
-                <span>VIP</span>
-                <span>NORMAL</span>
+                <Badge class="vip-badge">
+                    <span>VIP</span>
+                </Badge>
+                <Badge class="normal-badge">
+                    <span>NORMAL</span>
+                </Badge>
             </div>
         </Card>
 
         <Card class="resavation-card">
             <span>John Wick1</span>
             <div class="badges">
-                <span>VIP</span>
+                <Badge class="vip-badge">
+                    <span>VIP</span>
+                </Badge>
             </div>
         </Card>
 
         <Card class="resavation-card">
             <span>John Wick2</span>
             <div class="badges">
-                <span>NORMAL</span>
+                <Badge class="normal-badge">
+                    <span>NORMAL</span>
+                </Badge>
             </div>
         </Card>
 
         <Card class="resavation-card">
             <span>John Wick3</span>
             <div class="badges">
-                <span>NORMAL</span>
+                <Badge class="normal-badge">
+                    <span>NORMAL</span>
+                </Badge>
             </div>
         </Card>
     </div>
@@ -64,5 +75,15 @@ import Card from './Card.vue';
     margin-bottom: 8px;
     border-radius: 8px;
     box-shadow: 4px 4px 4px rgb(211, 211, 211)
+}
+
+.vip-badge {
+    background-color: #810036;
+    color: white;
+}
+.normal-badge {
+    background-color: #002c8a;
+    color: white;
+
 }
 </style>
