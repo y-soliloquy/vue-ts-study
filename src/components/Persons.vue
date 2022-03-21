@@ -3,7 +3,7 @@ import PersonPostForm from './PersonPostForm.vue';
 import PersonList from './PersonList.vue';
 import { ref, Ref } from 'vue';
 
-type Person = {
+export type Person = {
     id: number,
     name: string,
     age: number
@@ -19,7 +19,7 @@ const persons: Ref<Person[]> = ref([{ id: 0, name: 'John', age: 24}, { id: 1, na
     <PersonPostForm />
     <div class="list-container">
         <ul>
-            <PersonList />
+            <PersonList :persons="persons" />
         </ul>
     </div>
 </div>
