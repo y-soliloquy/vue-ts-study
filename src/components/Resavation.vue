@@ -46,9 +46,11 @@ const getContent = () => {
             <ResavationList />
         </div> -->
         <button @click="onClickButton">Change</button>
-        <dialog :open="isDialogOpen" class="dialog">
-            <span>Dialog</span>
-        </dialog>
+        <teleport to="body">
+            <dialog :open="isDialogOpen" class="dialog">
+                <span>Dialog</span>
+            </dialog>
+        </teleport>
     </div>
 </template>
 
