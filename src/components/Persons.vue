@@ -11,12 +11,16 @@ export type Person = {
 
 const persons: Ref<Person[]> = ref([{ id: 0, name: 'John', age: 24}, { id: 1, name: 'Mike', age: 21 }])
 
+const registerPerson = (person: Person) => {
+    persons.value.push(person)
+}
+
 </script>
 
 <template>
 <div class="container">
     <h1>Title</h1>
-    <PersonPostForm />
+    <PersonPostForm @register="registerPerson"/>
     <div class="list-container">
         <ul>
             <PersonList :persons="persons" />
