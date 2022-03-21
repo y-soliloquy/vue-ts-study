@@ -36,6 +36,7 @@ const color = computed(() => {
                 <span>name: </span>
                 <input class="input-name" type="text" v-model="inputtingName">
             </div>
+            <span class="input-validate-message" v-if="!isValidName">{{ nameLengthLimit }} 文字に収めてください。</span>
             <div class="input-column">
                 <span>age: </span>
                 <input class="input" type="number" v-model="inputtingAge">
@@ -73,6 +74,12 @@ const color = computed(() => {
 
 .input-name {
     background-color: v-bind(color);
+}
+
+.input-validate-message {
+    font-size: 12x;
+    margin-bottom: 8px;
+    color: rgb(244, 194, 190);
 }
 
 input {
