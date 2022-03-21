@@ -4,17 +4,20 @@ import { Person } from '../components/Persons.vue';
 
 type Props = {
     persons: Person[]
+};
+
+defineProps<Props>();
+const emit = defineEmits(['delete']);
+const onClickDelete = (id: number) => {
+    emit('delete', id);
 }
-
-defineProps<Props>()
-
 </script>
 
 <template>
     <li v-for="(person, id) in persons" :key="person.id" class="person-list">
         <span>{{ person.name }}</span>
         <span>age: {{ person.age }}</span>
-        <button>
+        <button @click="onClickDelete(person.id)">
             <span>delete</span>
         </button>
     </li>

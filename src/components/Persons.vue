@@ -15,6 +15,10 @@ const registerPerson = (person: Person) => {
     persons.value.push(person)
 }
 
+const deletePerson = (id: number) => {
+    persons.value = persons.value.filter(person => person.id !== id);
+}
+
 </script>
 
 <template>
@@ -23,7 +27,7 @@ const registerPerson = (person: Person) => {
     <PersonPostForm @register="registerPerson"/>
     <div class="list-container">
         <ul>
-            <PersonList :persons="persons" />
+            <PersonList :persons="persons" @delete="deletePerson" />
         </ul>
     </div>
 </div>
