@@ -14,6 +14,6 @@
     justify-content: center;
     align-items: center;
     width: 80px;
-    height: 44px;
+    height: 30px;
 }
 </style>
