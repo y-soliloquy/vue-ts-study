@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import PersonPostForm from './PersonPostForm.vue';
 import PersonList from './PersonList.vue';
+import UITitle from './ui/UITitle.vue';
 import { ref, Ref } from 'vue';
 
 export type Person = {
@@ -23,7 +24,7 @@ const deletePerson = (id: number) => {
 
 <template>
 <div class="container">
-    <h1>Title</h1>
+    <UITitle>リストアプリケーション</UITitle>
     <PersonPostForm @register="registerPerson"/>
     <div class="list-container">
         <ul>
