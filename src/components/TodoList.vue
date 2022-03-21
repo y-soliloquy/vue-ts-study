@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import UITitle from './ui/UITitle.vue';
 import { inject } from 'vue';
 
-const todos = inject('todos');
-const _addTodo = inject('addTodo');
+// const todos = inject('todos');
+// const _addTodo = inject('addTodo');
+
+const { todos, addTodo: _addTodo } = inject('todos')
 
 const addTodo = (title: string) => {
   _addTodo(title);
@@ -12,6 +15,7 @@ const addTodo = (title: string) => {
 
 <template>
   <div>
+    <UITitle>provideとinject</UITitle>
     <ul :style="{ listStyle: 'none' }">
       <li
         :style="{ backgroundColor: 'aliceblue', marginBottom: '10px' }"

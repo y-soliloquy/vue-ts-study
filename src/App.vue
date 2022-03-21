@@ -5,10 +5,9 @@ import Resavation from './components/Resavation.vue';
 import TodoList from './components/TodoList.vue';
 
 import { provide } from 'vue';
-import { todos, addTodo } from './useTodo';
+import { todos } from './useTodo';
 
-provide('todos', todos)
-provide('addTodo', addTodo);
+provide('todos', todos);
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 </script>
