@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 const inputtingName = ref<string>('');
 const inputtingAge = ref<number>(0);
 
@@ -10,6 +10,23 @@ const register = () => {
     emit('register', person);
 }
 
+const nameLengthLimit = 15;
+
+const isValidName = computed(() => {
+    if (inputtingName.value.length >= nameLengthLimit) {
+        return false;
+    } else {
+        return true;
+    }
+})
+
+const color = computed(() => {
+    return isValidName.value ? 'white' : 'rgb(244, 194, 190)';
+})
+
+
+
+
 </script>
 
 <template>
@@ -17,7 +34,7 @@ const register = () => {
         <div class="input-container">
             <div class="input-column">
                 <span>name: </span>
-                <input class="input" type="text" v-model="inputtingName">
+                <input class="input-name" type="text" v-model="inputtingName">
             </div>
             <div class="input-column">
                 <span>age: </span>
@@ -52,6 +69,10 @@ const register = () => {
    width: 200px;
    display: flex;
    justify-content: space-between;
+}
+
+.input-name {
+    background-color: v-bind(color);
 }
 
 input {
