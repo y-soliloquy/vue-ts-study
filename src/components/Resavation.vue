@@ -14,26 +14,26 @@ import Card from './Card.vue';
             </div>
         </Card>
 
-        <div class="resavation-card">
+        <Card class="resavation-card">
             <span>John Wick1</span>
             <div class="badges">
                 <span>VIP</span>
             </div>
-        </div>
+        </Card>
 
-        <div class="resavation-card">
+        <Card class="resavation-card">
             <span>John Wick2</span>
             <div class="badges">
                 <span>NORMAL</span>
             </div>
-        </div>
+        </Card>
 
-        <div class="resavation-card">
+        <Card class="resavation-card">
             <span>John Wick3</span>
             <div class="badges">
                 <span>NORMAL</span>
             </div>
-        </div>
+        </Card>
     </div>
 </template>
 
