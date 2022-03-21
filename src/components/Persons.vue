@@ -1,6 +1,16 @@
 <script setup lang="ts">
 import PersonPostForm from './PersonPostForm.vue';
 import PersonList from './PersonList.vue';
+import { ref, Ref } from 'vue';
+
+type Person = {
+    id: number,
+    name: string,
+    age: number
+}
+
+const persons: Ref<Person[]> = ref([{ id: 0, name: 'John', age: 24}, { id: 1, name: 'Mike', age: 21 }])
+
 </script>
 
 <template>
