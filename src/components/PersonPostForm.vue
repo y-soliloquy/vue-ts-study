@@ -1,18 +1,30 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue'
+const inputtingName = ref<string>('');
+const inputtingAge = ref<number>(0);
+
+const emit = defineEmits(['register'])
+
+const register = () => {
+    const person = { id: Math.random(), name: inputtingName.value, age: inputtingAge.value };
+    emit('register', person);
+}
+
+</script>
 
 <template>
     <div class="form-container">
         <div class="input-container">
             <div class="input-column">
                 <span>name: </span>
-                <input class="input" type="text">
+                <input class="input" type="text" v-model="inputtingName">
             </div>
             <div class="input-column">
                 <span>age: </span>
-                <input class="input" type="text">
+                <input class="input" type="number" v-model="inputtingAge">
             </div>
         </div>
-        <button class="register-button">register</button>
+        <button class="register-button" @click="register">register</button>
     </div>
 </template>
 
