@@ -1,7 +1,14 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import UITitle from './ui/UITitle.vue';
 import Card from './Card.vue';
 import Badge from './Badge.vue';
+
+const isListVisible = ref<boolean>(true);
+
+const onClickButton = () => {
+    isListVisible.value = !isListVisible.value
+}
 </script>
 
 <template>
@@ -18,27 +25,29 @@ import Badge from './Badge.vue';
                 </Badge>
             </div>
         </Card>
+        <div v-if="isListVisible">
+            <Card class="resavation-card">
+                <span>John Wick1</span>
+                <Badge class="vip-badge">
+                    <span>VIP</span>
+                </Badge>
+            </Card>
+            <Card class="resavation-card">
+                <span>John Wick2</span>
+                <Badge class="normal-badge">
+                    <span>NORMAL</span>
+                </Badge>
+            </Card>
+            <Card class="resavation-card">
+                <span>John Wick3</span>
+                <Badge class="normal-badge">
+                    <span>NORMAL</span>
+                </Badge>
+            </Card>
+        </div>
 
-        <Card class="resavation-card">
-            <span>John Wick1</span>
-            <Badge class="vip-badge">
-                <span>VIP</span>
-            </Badge>
-        </Card>
 
-        <Card class="resavation-card">
-            <span>John Wick2</span>
-            <Badge class="normal-badge">
-                <span>NORMAL</span>
-            </Badge>
-        </Card>
-
-        <Card class="resavation-card">
-            <span>John Wick3</span>
-            <Badge class="normal-badge">
-                <span>NORMAL</span>
-            </Badge>
-        </Card>
+        <button @click="onClickButton">Change</button>
     </div>
 </template>
 
